@@ -1,6 +1,67 @@
-# Event Ease - Full Stack Application
+# EventEase – College Event Management Platform
 
-A full-stack event management application with React frontend and FastAPI backend.
+EventEase is a full-stack event management application designed to help colleges efficiently create, manage, and participate in events (fests, workshops, tech talks, competitions, etc.).
+Organizers can manage event details, while students can explore events and register seamlessly.
+
+⸻
+
+## 🚀 Why EventEase?
+
+Managing college events often becomes messy—manual registration, communication gaps, attendance issues, and no centralized platform.
+EventEase solves this by bringing everything into a single digital system.
+
+⸻
+
+## 🎯 Core Features
+
+### 👨‍🏫 For Organizers
+	•	Create, edit & delete events
+	•	View number of registrations
+	•	View participant details
+	•	Manage event status
+	•	Clean event dashboard
+
+### 🎓 For Students
+	•	Browse all upcoming events
+	•	View event details
+	•	Register instantly
+	•	Confirmation UI
+	•	Mobile-friendly responsive design
+
+⸻
+
+## 🛠 Tech Stack
+
+### Frontend
+	•	React
+	•	React Router
+	•	Context API / Redux (as required)
+	•	Axios
+	•	Tailwind CSS / Custom CSS
+
+### Backend
+	•	FastAPI
+	•	Python
+	•	MongoDB Atlas
+	•	Pydantic models
+	•	REST APIs
+
+## Project Structure
+
+```
+EventEase/
+├── backend/
+│   ├── server.py          # FastAPI server
+│   ├── requirements.txt   # Python dependencies
+│   └── venv/             # Python virtual environment
+├── frontend/
+│   ├── src/              # React source code
+│   ├── package.json      # Node.js dependencies
+│   └── public/           # Static files
+└── README.md            # This file
+```
+
+# How to run
 
 ## Prerequisites
 
@@ -139,21 +200,6 @@ npm start
 - **Port 3000 already in use**: The app will prompt to use a different port
 - **Dependencies not found**: Run `npm install` or `yarn install` in the frontend directory
 - **CORS errors**: Ensure the backend is running on port 8000
-
-## Project Structure
-
-```
-FSD-EventEase/
-├── backend/
-│   ├── server.py          # FastAPI server
-│   ├── requirements.txt   # Python dependencies
-│   └── venv/             # Python virtual environment
-├── frontend/
-│   ├── src/              # React source code
-│   ├── package.json      # Node.js dependencies
-│   └── public/           # Static files
-└── README.md            # This file
-```
 
 ## API Endpoints
 
