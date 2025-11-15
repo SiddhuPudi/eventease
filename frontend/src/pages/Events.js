@@ -229,7 +229,7 @@
 //     setIsLoggedIn(isAuthenticated());
 //     setUserRole(getUserRole());
 
-//     fetch("http://127.0.0.1:8000/events")
+//     fetch("${API_BASE_URL}/events")
 //       .then((res) => res.json())
 //       .then((data) => {
 //         setEvents(data);
@@ -264,7 +264,7 @@
 //   // Add new event and send to backend
 //   const handleAddEvent = async (newEvent) => {
 //     try {
-//       const response = await fetch("http://127.0.0.1:8000/events", {
+//       const response = await fetch("${API_BASE_URL}/events", {
 //         method: "POST",
 //         headers: { "Content-Type": "application/json" },
 //         body: JSON.stringify(newEvent),
@@ -467,6 +467,7 @@ import AddEventModal from "@/components/AddEventModal";
 import { Search, Plus, Filter, ChevronDown } from "lucide-react";
 import { isAuthenticated, getUserRole } from "@/utils/auth";
 import { toast } from "sonner";
+import API_BASE_URL from "@/config/api";
 
 const Events = () => {
   const navigate = useNavigate();
@@ -490,7 +491,7 @@ const Events = () => {
     setIsLoggedIn(isAuthenticated());
     setUserRole(getUserRole());
 
-    fetch("http://127.0.0.1:8000/events")
+    fetch(`${API_BASE_URL}/events`)
       .then((res) => res.json())
       .then((data) => {
         const sorted = [...data].sort(
@@ -538,7 +539,7 @@ const Events = () => {
   // ✅ Add new event
   const handleAddEvent = async (newEvent) => {
     try {
-      const response = await fetch("http://127.0.0.1:8000/events", {
+      const response = await fetch(`${API_BASE_URL}/events`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newEvent),

@@ -39,7 +39,7 @@
 //   // ✅ Fetch event details directly by ID
 //   const fetchEvent = async () => {
 //     try {
-//       const res = await fetch(`http://127.0.0.1:8000/events/${id}`);
+//       const res = await fetch(`${API_BASE_URL}/events/${id}`);
 //       if (!res.ok) throw new Error("Failed to fetch event");
 //       const data = await res.json();
 //       setEvent(data);
@@ -77,7 +77,7 @@
 //   // ✅ Save edits to backend
 //   const handleEditSave = async () => {
 //     try {
-//       const res = await fetch(`http://127.0.0.1:8000/events/${event._id}`, {
+//       const res = await fetch(`${API_BASE_URL}/events/${event._id}`, {
 //         method: "PUT",
 //         headers: { "Content-Type": "application/json" },
 //         body: JSON.stringify(formData),
@@ -102,7 +102,7 @@
 //     if (!window.confirm("Are you sure you want to delete this event?")) return;
 
 //     try {
-//       const res = await fetch(`http://127.0.0.1:8000/events/${event._id}`, {
+//       const res = await fetch(`${API_BASE_URL}/events/${event._id}`, {
 //         method: "DELETE",
 //       });
 //       if (res.ok) {
@@ -373,6 +373,7 @@ import {
 import { isAuthenticated, getUserRole } from "@/utils/auth";
 import { toast, Toaster } from "sonner";
 import RegisterModal from "@/components/RegisterModal";
+import API_BASE_URL from "@/config/api";
 
 const EventDetails = () => {
   const { id } = useParams();
@@ -398,7 +399,7 @@ const EventDetails = () => {
   // ✅ Fetch event details directly by ID
   const fetchEvent = async () => {
     try {
-      const res = await fetch(`http://127.0.0.1:8000/events/${id}`);
+      const res = await fetch(`${API_BASE_URL}/events/${id}`);
       if (!res.ok) throw new Error("Failed to fetch event");
       const data = await res.json();
       setEvent(data);
@@ -436,7 +437,7 @@ const EventDetails = () => {
   // ✅ Save edits to backend
   const handleEditSave = async () => {
     try {
-      const res = await fetch(`http://127.0.0.1:8000/events/${event._id}`, {
+      const res = await fetch(`${API_BASE_URL}/events/${event._id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -461,7 +462,7 @@ const EventDetails = () => {
     if (!window.confirm("Are you sure you want to delete this event?")) return;
 
     try {
-      const res = await fetch(`http://127.0.0.1:8000/events/${event._id}`, {
+      const res = await fetch(`${API_BASE_URL}/events/${event._id}`, {
         method: "DELETE",
       });
       if (res.ok) {
