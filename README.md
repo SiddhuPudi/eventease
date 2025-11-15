@@ -45,7 +45,22 @@ EventEase solves this by bringing everything into a single digital system.
 	•	MongoDB Atlas
 	•	Pydantic models
 	•	REST APIs
-   
+
+## Project Structure
+
+```
+EventEase/
+├── backend/
+│   ├── server.py          # FastAPI server
+│   ├── requirements.txt   # Python dependencies
+│   └── venv/             # Python virtual environment
+├── frontend/
+│   ├── src/              # React source code
+│   ├── package.json      # Node.js dependencies
+│   └── public/           # Static files
+└── README.md            # This file
+```
+
 # How to run
 
 ## Prerequisites
@@ -105,22 +120,6 @@ EventEase solves this by bringing everything into a single digital system.
    # OR using yarn:
    yarn install
    ```
-
-## Project Structure
-
-```
-EventEase/
-├── backend/
-│   ├── server.py          # FastAPI server
-│   ├── requirements.txt   # Python dependencies
-│   └── venv/             # Python virtual environment
-├── frontend/
-│   ├── src/              # React source code
-│   ├── package.json      # Node.js dependencies
-│   └── public/           # Static files
-└── README.md            # This file
-```
-
 
 ## Running the Application
 
