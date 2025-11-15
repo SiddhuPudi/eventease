@@ -172,6 +172,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import RegistrantsModal from "@/components/RegistrantsModal";
+import API_BASE_URL from "@/config/api";
 
 const Dashboard = () => {
   const [stats, setStats] = useState(null);
@@ -180,7 +181,7 @@ const Dashboard = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/dashboard-stats")
+    fetch(`${API_BASE_URL}/dashboard-stats`)
       .then((res) => res.json())
       .then((data) => setStats(data))
       .catch((err) => console.error(err))

@@ -161,6 +161,7 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Download } from "lucide-react";
 import { toast } from "sonner";
+import API_BASE_URL from "@/config/api";
 
 const toCSV = (rows) => {
   if (!rows || rows.length === 0) return "";
@@ -203,9 +204,9 @@ const RegistrantsModal = ({ isOpen, onClose, eventId, eventTitle }) => {
     const load = async () => {
       setLoading(true);
       try {
-        let res = await fetch(`http://127.0.0.1:8000/events/${eventId}/registrations`);
+        let res = await fetch(`${API_BASE_URL}/events/${eventId}/registrations`);
         if (res.status === 404) {
-          res = await fetch(`http://127.0.0.1:8000/events/${eventId}`);
+          res = await fetch(`${API_BASE_URL}/events/${eventId}`);
           const full = await res.json();
           setRegistrants(full.registrations || []);
         } else {

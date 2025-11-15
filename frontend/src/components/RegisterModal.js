@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, User, Mail, GraduationCap, Building2, Calendar, Phone } from "lucide-react";
 import { toast } from "sonner";
+import API_BASE_URL from "@/config/api";
 
 const RegisterModal = ({ isOpen, onClose, eventId }) => {
   const [formData, setFormData] = useState({
@@ -27,7 +28,7 @@ const RegisterModal = ({ isOpen, onClose, eventId }) => {
     }
 
     try {
-      const response = await fetch(`http://127.0.0.1:8000/events/${eventId}/register`, {
+      const response = await fetch(`${API_BASE_URL}/events/${eventId}/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

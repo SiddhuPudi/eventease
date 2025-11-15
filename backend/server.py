@@ -17,13 +17,18 @@ app = FastAPI()
 # -------------------------------
 #  Allow frontend (React) access
 # -------------------------------
-origins = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-]
+# Get allowed origins from environment variable or use defaults
+allowed_origins = os.getenv(
+    "ALLOWED_ORIGINS",
+    "http://localhost:3000,http://127.0.0.1:3000"
+).split(",")
+
+# Add your production frontend URL to ALLOWED_ORIGINS environment variable
+# Example: ALLOWED_ORIGINS=http://localhost:3000,https://your-frontend.vercel.app
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
