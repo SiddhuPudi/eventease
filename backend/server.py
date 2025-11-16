@@ -22,10 +22,12 @@ app = FastAPI(
 )
 
 # CORS Configuration
-allowed_origins = os.getenv(
-    "ALLOWED_ORIGINS",
-    "http://localhost:3000,http://127.0.0.1:3000"
-).split(",")
+allowed_origins = [
+    "https://eventease-pn73.vercel.app",   # your frontend URL
+    "http://localhost:3000",
+    "http://127.0.0.1:3000"
+]
+
 
 app.add_middleware(
     CORSMiddleware,
